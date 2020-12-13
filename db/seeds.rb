@@ -10,3 +10,6 @@
 jessie = Student.create(name: "Jessie")
 amy = Student.create(name: "Amy")
 lee = Student.create(name: "Lee")
+
+
+Grade.create(class: "Art", student_grade: "A", student_id: "1")
