@@ -13,3 +13,6 @@ lee = Student.create(name: "Lee")
 
 
 Grade.create(name_of_class: "Art", student_grade: "A", student_id: "jessie.id")
+
+Category.destroy_all
+Syllabus.destroy_all
