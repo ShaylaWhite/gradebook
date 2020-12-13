@@ -1,3 +1,3 @@
 class Student < ApplicationRecord
-    has_many :grades 
-end
+    has_many :grades, dependent: :destroy
+end 
