@@ -12,4 +12,4 @@ amy = Student.create(name: "Amy")
 lee = Student.create(name: "Lee")
 
 
-Grade.create(name_of_class: "Art", student_grade: "A", student_id: "1")
+Grade.create(name_of_class: "Art", student_grade: "A", student_id: "jessie.id")
