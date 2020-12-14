@@ -1,8 +1,8 @@
 class Api::V1::StudentsController < ApplicationController
     def index
-        grades = Grade.all
+        students = Student.all
         #render json: grades
-        render json: GradeSerializer.new(grades)
+        render json: students
     end
      
 end
