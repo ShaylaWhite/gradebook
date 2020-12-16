@@ -1,4 +1,5 @@
 class Api::V1::GradesController < ApplicationController
+ 
   def index
     grades = Grade.all
     options = {
@@ -13,24 +14,25 @@ class Api::V1::GradesController < ApplicationController
   
   def create
     grade = Grade.new(grade_params)
-   grade.save
-  render json: GradeSerializer.new(grade), status: :accepted
+    grade.save
+    render json: GradeSerializer.new(grade), status: :accepted
   end
 
   def destroy 
-    grade = 
+    grade = Grade.find_by(id:params[:id])
+    grade.destroy
+    render json: grade
   end 
 
 
-private
+  private
 
-def grade_params
-  params.require(:grade).permit(:name_of_class, :student_grade, :student_id)
+  def grade_params
+    params.require(:grade).permit(:name_of_class, :student_grade, :student_id)
+  end
 
-end
-
-def find_grade
-  @grade = Grade.find(params[:id])
-end 
+  def find_grade
+    @grade = Grade.find(params[:id])
+  end 
 
 end
