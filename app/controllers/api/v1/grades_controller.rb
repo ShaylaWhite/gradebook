@@ -1,25 +1,28 @@
 class Api::V1::GradesController < ApplicationController
 
-    def index
-        grades = Grade.all
-        render json: GradeSerializaer.new(grades)
-    end
 
-
-    def create
-        @grade = Grade.new(grade_params)
-        if @grade.save
-        render json: @grade, status: :accepted 
-        else
-        render json: { errors: @grade.errors.full_messages }, status: :unprocessible_entity
-        end
+  
+  def create
+    grade = Grade.new(grade_params)
+    grade.save
+    render json: GradeSerializer.new(grade), status: :accepted
   end
-#render to the front-end for the user if it accepted or errors if not 
+
+  def destroy 
+    grade = Grade.find_by(id:params[:id])
+    grade.destroy
+    render json: grade
+  end 
+
 
   private
 
   def grade_params
-    params.require(grade).permit(:name_of_class, :student_grade, :student_id)
+    params.require(:grade).permit(:name_of_class, :student_grade, :student_id)
   end
+
+  def find_grade
+    @grade = Grade.find(params[:id])
+  end 
 
 end
