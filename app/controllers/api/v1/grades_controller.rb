@@ -1,14 +1,4 @@
 class Api::V1::GradesController < ApplicationController
- 
-  def index
-    grades = Grade.all
-    options = {
-      # include associated category
-      include: [:student]
-    }
-    # pass options object to serializer
-    render json: GradeSerializer.new(grades, options)
-  end
 
 
   
