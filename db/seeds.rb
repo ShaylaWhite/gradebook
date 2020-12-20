@@ -16,3 +16,4 @@ lee = Student.create(name: "Lee")
 
 
 
+Grade.create(name_of_class: "Get Money", student_grade: "A", student_id: jessie.id)
