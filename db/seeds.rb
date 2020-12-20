@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Student.destroy_all
+Grade.destroy_all
+
 
 jessie = Student.create(name: "Jessie")
 amy = Student.create(name: "Amy")

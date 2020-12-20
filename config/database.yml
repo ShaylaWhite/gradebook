@@ -22,8 +22,12 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
   database: Gradebook_development
+  host: localhost
+  username: shayla
+  password: shayla
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -81,5 +85,5 @@ test:
 production:
   <<: *default
   database: Gradebook_production
-  username: Gradebook
-  password: <%= ENV['GRADEBOOK_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: shayla
