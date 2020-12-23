@@ -9,16 +9,19 @@ class Api::V1::GradesController < ApplicationController
 
   def create
     grade = Grade.new(grade_params)
-    grade.save
-      render json: GradeSerializer.new(grade), status: :accepted
+    if grade.save
+        render json: GradeSerializer.new(grade), status: :accepted
+    else
+        render json: {errors: grade.errors.full_messages}, status: :unprocessible_entity
+    end
+end
+
   
-  end
-
   def destroy
-     grade = Grade.find_by(id: params[:id])
-     grade.destroy
-  end 
-
+    # binding.pry
+    grade = Grade.find_by(id: params[:id])
+    grade.destroy
+end
 
   private
 
