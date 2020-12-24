@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Gradebook - 
 
-Things you may want to cover:
+GradeBook is a single page application that displays all of the grade in the gradebook.
 
-* Ruby version
+Simply fork and clone the repository
 
-* System dependencies
+1. cd into the gradebook/ gradebook_frontedn directory
 
-* Configuration
+2. open the index.html file in your browser
 
-* Database creation
+Now the app is ready to use. 
 
-* Database initialization
 
-* How to run the test suite
+View the Gradebook Backend API:
 
-* Services (job queues, cache servers, search engines, etc.)
+https://github.com/ShaylaWhite/gradebook
 
-* Deployment instructions
+View the Gradebook FrontEnd 
 
-* ...
+https://github.com/ShaylaWhite/gradebook_frontend
