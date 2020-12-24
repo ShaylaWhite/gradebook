@@ -12,15 +12,13 @@ class Api::V1::GradesController < ApplicationController
     if grade.save
         render json: GradeSerializer.new(grade), status: :accepted
     else
-        render json: {errors: grade.errors.full_messages}, status: :unprocessible_entity
+      render json: GradeSerializer.new(grade), status: :accepted
     end
 end
-
   
   def destroy
-    # binding.pry
     grade = Grade.find_by(id: params[:id])
-    grade.destroy
+    grade.destroy!
 end
 
   private
