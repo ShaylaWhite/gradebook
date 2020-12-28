@@ -9,11 +9,8 @@ class Api::V1::GradesController < ApplicationController
 
   def create
     grade = Grade.new(grade_params)
-    if grade.save
+         grade.save
         render json: GradeSerializer.new(grade), status: :accepted
-    else
-      render json: GradeSerializer.new(grade), status: :accepted
-    end
 end
   
   def destroy
